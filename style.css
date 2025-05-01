@@ -1,0 +1,588 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Add a new class for scrolled state */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 4rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+  margin-left: 2rem;
+}
+
+.navbar.scrolled .brand {
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-links li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-links li a {
+  color: #333;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+}
+
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-toggle {
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url(./images//hero.png) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section */
+.about {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.about .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.about p strong {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.about p:not(:last-child) {
+  margin-bottom: 1.8rem;
+}
+
+/* Projects Section */
+.projects {
+  padding: 5rem 0;
+  background-color: #f8f9fa; /* Lighter grey background */
+}
+
+.projects .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 700;
+  background: linear-gradient(45deg, #333, #666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover h3 {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.project-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.project-features {
+  margin: 1.5rem 0;
+}
+
+.project-features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.project-features li:before {
+  content: "•";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+}
+
+.tech-stack span {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.tech-stack span:hover {
+  background-color: #dee2e6;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.project-links a {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.demo-link {
+  background-color: #007bff;
+  color: white;
+}
+
+.demo-link:hover {
+  background-color: #0056b3;
+}
+
+.github-link {
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+}
+
+.github-link:hover {
+  background-color: #e9ecef;
+}
+
+/* Add these styles to differentiate project cards */
+.project-card:nth-child(1) {
+  border-top: 4px solid #007bff; /* Blue accent for the HR project */
+}
+
+.project-card:nth-child(1) .project-features li:before {
+  color: #007bff; /* Match the bullet points with the accent color */
+}
+
+.project-card:nth-child(1) .demo-link {
+  background-color: #007bff; /* Blue button for the HR project */
+}
+
+.project-card:nth-child(1) .demo-link:hover {
+  background-color: #0056b3;
+}
+
+.project-card:nth-child(2) {
+  border-top: 4px solid #28a745; /* Green accent for the game project */
+}
+
+.project-card:nth-child(2) .project-features li:before {
+  color: #28a745; /* Match the bullet points with the accent color */
+}
+
+.project-card:nth-child(2) .demo-link {
+  background-color: #28a745; /* Green button for the game project */
+}
+
+.project-card:nth-child(2) .demo-link:hover {
+  background-color: #218838;
+}
+
+.project-card:nth-child(3) {
+  border-top: 4px solid #6f42c1; /* Purple accent for the portfolio project */
+}
+
+.project-card:nth-child(3) .project-features li:before {
+  color: #6f42c1; /* Match the bullet points with the accent color */
+}
+
+.project-card:nth-child(3) .demo-link {
+  background-color: #6f42c1; /* Purple button for the portfolio project */
+}
+
+.project-card:nth-child(3) .demo-link:hover {
+  background-color: #5a32a3;
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+.contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+}
+
+#contact-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  background-color: white;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  background: #007bff;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form validation styles */
+input:invalid,
+textarea:invalid {
+  border-color: #ffc107; /* Soft yellow warning color */
+}
+
+input:invalid:focus,
+textarea:invalid:focus {
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+}
+
+/* Add a subtle validation message style */
+.form-group .validation-message {
+  display: none;
+  color: #ffc107;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+input:invalid + .validation-message,
+textarea:invalid + .validation-message {
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+
+  .navbar.scrolled {
+    padding: 1rem 2rem;
+  }
+
+  .brand {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    margin-right: 0;
+    padding: 1rem 2rem;
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .navbar.scrolled .nav-links {
+    background: white;
+  }
+
+  .navbar.scrolled .nav-links li a {
+    color: #333;
+  }
+
+  .about .container {
+    padding: 0 1.5rem;
+  }
+
+  .about p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .projects .container {
+    padding: 0 1.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  .contact .container {
+    padding: 0 1.5rem;
+  }
+
+  #contact-form {
+    padding: 1.5rem;
+  }
+}
